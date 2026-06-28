@@ -1,0 +1,12 @@
+local player = game.Players.LocalPlayer
+local toFind = workspace:WaitForChild("ToFind")
+
+for _, child in pairs(toFind:GetChildren()) do
+    local touchInterest = child:FindFirstChild("TouchInterest")
+    if touchInterest then
+        firetouchinterest(player.Character.HumanoidRootPart, child, 0)
+        task.wait(0.1)
+        firetouchinterest(player.Character.HumanoidRootPart, child, 1)
+        task.wait(0.5)
+    end
+end
